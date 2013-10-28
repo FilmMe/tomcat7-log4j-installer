@@ -1,0 +1,16 @@
+Package: tomcat7-log4j
+Version: 0.1
+Section: custom
+Priority: optional
+Architecture: all
+Essential: no
+Depends: tomcat7
+Recommends: tomcat6 | tomcat7
+Suggests: 
+Installed-Size: 624223
+Maintainer: filmme.tv <info@filmme.tv>
+Conflicts:
+Replaces: 
+Description: Auto-installs log4j rotating logs for tomcat7
+
+

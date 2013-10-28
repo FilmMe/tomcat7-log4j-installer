@@ -1,0 +1,21 @@
+#/bin/bash
+
+# link log4j to tomcat7
+ln -s /usr/share/java/log4j-1.2.17.jar /usr/share/tomcat7/lib/log4j.jar
+# link juli-adapters
+ln -s /usr/share/java/tomcat-juli-adapters.jar /usr/share/tomcat7/lib/tomcat-juli-adapters.jar
+# re-link tomcat-juli
+rm -f /usr/share/java/tomcat-juli.jar
+ln -s /usr/share/java/tomcat-juli-log4j.jar /usr/share/java/tomcat-juli.jar
+
+# remove original logging properties
+mv /etc/tomcat7/logging.properties /etc/tomcat7/logging.properties.original
+
+# delete all old logs
+rm -f /var/log/tomcat7/*
+
+# start tomcat7
+service tomcat7 start
+
+true
+

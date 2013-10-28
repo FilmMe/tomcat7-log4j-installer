@@ -1,0 +1,21 @@
+#/bin/bash
+
+# unlink log4j
+rm -f /usr/share/tomcat7/lib/log4j.jar
+# unlink juli-adapters
+rm -f /usr/share/tomcat7/lib/tomcat-juli-adapters.jar
+# re-link tomcat-juli
+rm /usr/share/java/tomcat-juli.jar
+ln -s `find /usr/share/java -type f | grep tomcat-juli-7` /usr/share/java/tomcat-juli.jar
+
+# restore original logging properties
+mv /etc/tomcat7/logging.properties.original /etc/tomcat7/logging.properties
+
+# delete all old logs
+rm -f /var/log/tomcat7/*
+
+# start tomcat7
+service tomcat7 start
+
+true
+

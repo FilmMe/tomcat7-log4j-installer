@@ -1,7 +1,17 @@
 
+This small project is all about creating a single .deb file.
+The debian file does pretty much what is being described here:
 
-
-See:
 http://tomcat.apache.org/tomcat-7.0-doc/logging.html#Using_Log4j
+
+in other words once installed into a Debian or Ubuntu setup,
+it will replace the default Tomcat logging with log4j logging,
+which is a rotating log.
+
+In detail, it has a script that does following:
+
+1. downloads a couple of JAR files from apache web site
+2. creates log4j properties file
+3. creates a .deb dile
 
 
