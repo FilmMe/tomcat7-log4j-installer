@@ -1,0 +1,11 @@
+# files git should ignore
+
+# the output
+tomcat7-log4j/
+tomcat7-log4j.deb
+
+# temp files
+*~
+
+
+
