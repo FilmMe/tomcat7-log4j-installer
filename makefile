@@ -35,7 +35,7 @@ uninstall:
 
 build: resources controls
 	# create deb file
-	dpkg-deb --build $(THIS)
+	fakeroot dpkg-deb --build $(THIS)
 
 clean:
 	rm -R $(THIS)
@@ -61,6 +61,7 @@ controls:
 	cp -f src/postinst $(THIS)/DEBIAN/
 	cp -f src/prerm $(THIS)/DEBIAN/
 	cp -f src/postrm $(THIS)/DEBIAN/
+	cp -f src/copyright $(THIS)/DEBIAN/
 
 
 
